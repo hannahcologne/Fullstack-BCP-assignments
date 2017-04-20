@@ -1,0 +1,8 @@
+function flatten(array) {
+
+	var flattenedArray = [].concat.apply([], array);
+	return flattenedArray;
+	
+}
+
+flatten([1,[2,3],4]);  
