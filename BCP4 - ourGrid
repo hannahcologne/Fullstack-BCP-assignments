@@ -1,0 +1,25 @@
+// Write a function that accepts a single argument that is a "grid", and logs out each value in that grid.
+
+
+var ourGrid = [
+	[1,2,3,4,5,6,7,8,9,10],
+	[1,2,3,4,5,6,7,8,9,10],
+	[1,2,3,4,5,6,7,8,9,10],
+	[1,2,3,4,5,6,7,8,9,10],
+	[1,2,3,4,5,6,7,8,9,10],
+	[1,2,3,4,5,6,7,8,9,10],
+	[1,2,3,4,5,6,7,8,9,10],
+	[1,2,3,4,5,6,7,8,9,10],
+	[1,2,3,4,5,6,7,8,9,10],
+	[1,2,3,4,5,6,7,8,9,10]
+];
+
+function gridLogger(grid) {
+  for(var i = 0 ; i < grid.length; i++) {
+    for(var j = 0; j < grid[i].length; j++) {
+      console.log(ourGrid[i][j]);
+    }
+  }  
+}
+
+gridLogger(ourGrid)
