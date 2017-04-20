@@ -27,14 +27,16 @@ removeColumns([[1, 2, 3],
 
 function makeGrid(width, height) {
   var newArray = [];	
+  var finalArray = [];
 
   for(var i = 1; i <= width; i++) {
 		newArray.push(i);
 	 }
 
 	for(var j = 1; j <= height; j++) {		
-		console.log(newArray);	
+		finalArray.push(newArray);	
 	}
+	console.log(finalArray);
 }
 
 makeGrid(5,8);
