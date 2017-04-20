@@ -1,0 +1,50 @@
+/*Count by M
+
+Write a function that takes three arguments: n (number), m (number) and direction (string). The function should count to n by intervals of m. If the direction string is "up", the function should count up to n, if the string is "down", it should count down to 0. You can assume that both n and m will be greater than 0. Do not print numbers greater than n.
+
+Please complete the problem in two ways:
+
+using a for loop
+using a while loop
+
+*/
+//Using a for loop
+
+function count (n, m, str) {
+
+  if(str === "up") {
+    for(var i = m; i <= n; i += m) {
+      console.log(i);
+    }
+  } else if ( str === "down") {
+    for(var j = n; j >= 0; j -= m) {
+      console.log(j);
+    }
+  }
+}
+
+count(10, 2, "up");
+// //count(11, 3 , "down");
+
+//Using a while loop
+
+function count (n, m, str) {
+  var countUp = m;
+  var countDown = n;
+
+  if(str === "up") {
+    while(countUp <= n) {
+      console.log(countUp);
+      countUp += m;
+    }
+  } else if(str === "down") {
+    while(countDown >= 0) {
+      console.log(countDown);
+      countDown -= m;
+    }
+  }
+}
+
+//count(10, 2, "up");
+count(11, 3 , "down");
+
