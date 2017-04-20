@@ -1,0 +1,26 @@
+/*
+Zoo Inventory
+
+Write a function zooInventory that takes a zoo's inventory of animals (represented using nested arrays) and logs out each animal's name, species, and age.
+*/
+
+// console.log(myZoo[0]) = name
+// console.log(myZoo[0][1][0]) = type
+// console.log(myZoo[0][1][1]) = age
+
+
+function zooInventory(myZoo) {
+	for(var i = 0; i < myZoo.length; i++) {
+		console.log(myZoo[i][0] + " the " + myZoo[i][1][0] + " is " + myZoo[i][1][1]);
+	}
+}
+
+var myZoo = [
+    ["King Kong", ["gorilla", 42]],
+    ["Nemo", ["fish", 5]],
+    ["Punxsutawney Phil", ["groundhog", 11]]
+];
+
+zooInventory(myZoo);
+
+
