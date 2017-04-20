@@ -1,0 +1,18 @@
+/* Zero Dark Thirty
+
+Write a function that strips the zeros from a number, and returns the "stripped" number. If only a zero is passed in, the function should return NaN.
+
+removeZero(102302) // => 1232
+removeZero(606.203) // => 66.23
+Bonus: Write the function without ever using equality comparison operators (== or ===). Hint: You'll have to use coercion and truthy/falsey.
+
+*/
+
+function removeZero(num) {
+  var stringifiedNum = num.toString();
+  var finalNum = stringifiedNum.replace(/0+/g, "");
+  return Number(finalNum); 
+}
+
+//removeZero(102302); // => 1232
+//removeZero(606.203) // => 66.23
