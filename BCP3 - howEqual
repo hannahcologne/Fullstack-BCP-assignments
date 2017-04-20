@@ -1,0 +1,19 @@
+/*
+Write a function that compares two values and returns "how equal" those two values are. If they are strictly equal return "strictly", if they are loosely equal return "loosely", and if they are neither return "not equal".
+
+*/
+
+function howEqual(val1, val2) {
+  if(val1 === val2) {
+    return "strictly";
+  } else if(val1 == val2) {
+    return "loosely";
+  } else {
+    return "not equal";
+  }
+}
+
+//howEqual(0,"0");    // => "loosely"
+//howEqual(3, 9/3);    // => "strictly"
+//howEqual(true, "truthy");    // => "not equal"
+
