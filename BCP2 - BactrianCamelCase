@@ -1,0 +1,24 @@
+/* In JavaScript, we generally name our variables using a lowercase first letter, and camel case (camelCase) for the rest of the string. With camel case:
+
+Compound words or phrases [are written] such that each word or abbreviation in the middle of the phrase begins with a capital letter, with no spaces or hyphens. - Wikipedia
+
+So a variable representing the average male height could be named averageMaleHeight.
+
+For this problem, write a function bactrianCase that accepts a single string as an argument. The function should log out that string with every other letter capitalized.
+
+*/
+
+function bactrianCase(str) {
+  var finalString = "";
+
+  for(var i = 0; i < str.length; i++) {
+    if(i%2 === 0) {
+      finalString = finalString + str[i].toUpperCase();
+    } else {
+      finalString = finalString + str[i].toLowerCase();
+    }
+  }
+  console.log(finalString); 
+}
+
+bactrianCase("thisisatest")   
