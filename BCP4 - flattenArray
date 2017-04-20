@@ -8,11 +8,15 @@ Hint: Use the typeof operator or Array.isArray() to test whether an element is a
 flatten([1,[2,3],4])    // => [1,2,3,4]
 */
 
+
 function flatten(array) {
 
-	var flattenedArray = [].concat.apply([], array);
-	return flattenedArray;
-	
-}
+// check if parameter is array  
+  if(array.constructor === Array) {
+    
+  var flattenedArray = [].concat.apply([], array);    
+	console.log(flattenedArray);
+  }
+}  
 
 flatten([1,[2,3],4]);  
