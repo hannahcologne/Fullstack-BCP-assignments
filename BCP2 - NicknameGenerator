@@ -1,0 +1,24 @@
+/*
+Write a naive nickname generator function that takes a name and generates a nickname that is the first 3 or 4 letters (4 letters if the 3rd is a vowel).
+
+The nickname generator should log out the individual's full name along with their nickname in quotes, and then return the nickname.
+*/
+
+function nicknameGenerator (name) {
+  
+  var nickname;
+  var vowels = "aieou";
+  
+  if(vowels.indexOf(name[2]) > -1) {
+    nickname = name.slice(0,4);
+  } else {
+    nickname = name.slice(0,3);
+  }
+
+  console.log("the nickname for " + name + " is " + "\"" + nickname + "\"");
+  return nickname;
+}
+
+nicknameGenerator("Pierre")
+// The nickname for Daniel is 'Dan'.
+// => 'Dan'
