@@ -1,0 +1,28 @@
+/*
+Write a function isTruthy that accepts a single argument and returns true if that argument is "truthy" and false if not. If the value is "falsey", log out one of the messages below, corresponding to the value tested.
+
+"The boolean value false is falsey"
+"The null value is falsey"
+"undefined is falsey"
+"The number 0 is falsey (the only falsey number)"
+"The empty string is falsey (the only falsey string)"
+For the purpose of this exercise, do not test for the value NaN. Just be aware that it is one of the six falsey values in JavaScript. For the curious, we exclude NaN from this exercise because it has some unintuitive behavior. Namely, NaN === NaN returns false. You can read more here, but you're not likely to be tested on this in any bootcamp assessment.
+
+*/
+
+function isTruthy(val) {
+// explicit way to force val to coerce to boolean value (true or false)  
+
+  var d = Boolean(val);
+  
+  if(d === false) {
+    return "the " + typeof val + " value " + val + " is falsey";
+  } else {
+    return "the " + typeof val + " value " + val + " is truthy";
+  }
+}
+
+//isTruthy("hello world")    // => true
+isTruthy(0);
+// The number 0 is falsey (the only falsey number)
+// => false
