@@ -24,4 +24,17 @@ function onlyOne (arg1, arg2, arg3) {
   }
 }
 
-onlyOne(false, false, true);
+onlyOne(0, 1, 2)    // => false
+
+// Bonus
+
+function onlyOne(arg1, arg2, arg3) {
+  return !((!!arg1*1 + !!arg2*1 + !!arg3*1) - 1);
+}
+
+onlyOne(false, false, true)    // => true
+// onlyOne(0, 1, 2)    // => false
+
+// truthy falsy falsy
+// falsy truthy falsy
+// falsy falsy truthy
