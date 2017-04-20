@@ -1,3 +1,13 @@
+/*
+Array Flattener
+
+Write a function that accepts a two-dimensional array and returns a flattened one-dimensional copy of the array.
+
+Hint: Use the typeof operator or Array.isArray() to test whether an element is an array. If so, use a nested loop to access those values.
+
+flatten([1,[2,3],4])    // => [1,2,3,4]
+*/
+
 function flatten(array) {
 
 	var flattenedArray = [].concat.apply([], array);
