@@ -1,0 +1,27 @@
+/*Only One
+
+Write a function that accepts three arguments and returns true if only one of those arguments is truthy, and false if not. Write the function without using equality comparison operators (== or ===).
+
+onlyOne(false, false, true)    // => true
+onlyOne(0, 1, 2)    // => false
+Bonus: Write the function without ever using a logical operator (&& or ||) or any if statements. Hint: when coerced to a number true becomes 1 and false becomes 0.
+*/
+
+function onlyOne (arg1, arg2, arg3) {
+  //convert args to value
+  var x = +arg1; 
+  var y = +arg2;
+  var z = +arg3;
+  
+  if (x || y || z) {
+    if(x+y+z > 1) {
+      return false;
+    } else {
+    return true;
+    } 
+  } else {
+  return false;  
+  }
+}
+
+onlyOne(false, false, true);
