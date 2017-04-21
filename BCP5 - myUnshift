@@ -1,0 +1,21 @@
+/*My Unshift
+One of the best ways to learn a concept is to go through the process of implementing it yourself. In this section, we'll implement our own versions of several key array methods.
+To start, write a myUnshift function that mirrors the behavior of JavaScript's .unshift() array method. However, myUnshift should accept the array to operate on as an argument and return the new array with the added element.
+For now, assume that myUnshift will receive only two arguments: the array, and a single value to be added to the start of the array.
+Do not use the native .unshift() method in your own implementation.
+*/
+
+function myUnshift(array, valToAdd) {
+  var unshiftedArray = [];
+  unshiftedArray[0] = valToAdd;  
+  
+  for(var i = 0; i < array.length; i++) {
+    unshiftedArray.push(array[i]);
+  }
+  array = unshiftedArray;
+  console.log(unshiftedArray);
+}
+
+myUnshift([1,2,3], 0);
+
+// => [0,1,2,3]
