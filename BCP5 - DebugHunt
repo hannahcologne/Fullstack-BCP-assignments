@@ -1,0 +1,49 @@
+/*Debug Hunt
+
+We've got some code that's not working properly. Copy the code below into a repl, and debug the functions to get the code running right. Use the error messages in the console (on the right in repl.it) to guide your debugging.
+
+Don't worry about changing the code to produce meaningful output. Rather, focus on correcting any errors that prevent the program from being parsed and run at all.
+*/
+
+var debugHunt = function(arg1, arg2) {
+  
+  var hello1 = function() {
+    console.log('step 1');
+  };   
+  
+  hello1();
+
+  var hello2 = function(msg) {
+    console.log("Hello " + msg);
+  };
+
+  hello2("how are you?");
+
+  var hello3 = function(a,b) {
+    console.log(a + b);
+  };
+
+  hello3("getting ", "better");
+
+
+  var hello4 = function(first, last) {
+    console.log(first + ' ' + last);
+  };
+
+  hello4("Debugging is","simple");
+
+  var hello5 = function() {
+    console.log("So far so good");
+  };
+
+  hello5();
+
+  var hello6 = function(num) {
+    console.log('!!');
+  };
+
+  hello6(3);
+};
+
+debugHunt();
+
