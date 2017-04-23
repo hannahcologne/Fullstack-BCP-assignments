@@ -1,0 +1,32 @@
+/*
+Even and Odd
+Write a function that accepts an array of numbers and returns an array of arrays. The first array in the return array should include all even numbers. The second array in the return array should include all odd numbers.
+Write two solutions for this problem. In the first, use only array methods from the following list:
+.pop()
+.push()
+.shift()
+.unshift()
+In the second, avoid using those methods and incorporate .slice() (you may use the .length property in both).
+*/
+function evenOdd(array) {
+var evenArray = [];
+var oddArray = [];
+var finalArray = [];
+
+  for(var i = 0; i < array.length; i++) {
+    if(array[i]%2 === 0) {
+      evenArray[evenArray.length] = array[i];
+    }
+  }
+  
+  for(var j = 0; j < array.length; j++) {
+    if(array[j]%2 !== 0) {
+      oddArray[oddArray.length] = array[j];
+    }
+  }
+  
+  finalArray.splice(0, 0, oddArray, evenArray);
+  console.log(finalArray);
+}  
+
+var myArray = evenOdd([1,2,3,4,5,6]);
