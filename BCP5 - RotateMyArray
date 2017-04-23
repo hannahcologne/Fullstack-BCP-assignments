@@ -1,0 +1,30 @@
+/*Rotate Array
+Write a function rotate that accepts an array and a number n and returns a new array with the elements "rotated" n spaces.
+If n is greater than 0 it should rotate the array to the right. If n is less than 0 it should rotate the array to the left. If n is 0, then it should return the array unchanged.
+*/
+
+function rotate(array, n) {
+  var temp;
+  
+  if(n === 0) {
+    return array;
+    
+  } else if( n > 0) {
+    for(var i = 0; i < n; i++) {
+      temp = array.pop();
+      array.unshift(temp);
+    }
+    
+  } else if(n < 0) {
+    for(var j = n; j < 0; j++) {
+      temp = array.shift();
+      array.push(temp);
+    }
+  }
+  return(array);
+}
+
+var myArray = [1, 2, 3, 4, 5];
+//rotate(myArray, 1)     // => [5, 1, 2, 3, 4]
+//rotate(myArray, -1)    // => [2, 3, 4, 5, 1]
+//rotate(myArray, 0)    // => [1, 2, 3, 4, 5]
