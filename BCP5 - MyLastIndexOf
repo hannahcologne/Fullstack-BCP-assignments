@@ -1,0 +1,30 @@
+/*My LastIndexOf
+
+Write a myLastIndexOf function that mirrors the behavior of JavaScript's .lastIndexOf() array method. However, myLastIndexOf will accept the array to operate on as an argument, instead of being invoked as a method on that array.
+Try and mirror the behavior of the native .lastIndexOf() method as closely as possible. Note that .lastIndexOf() accepts an optional parameter representing the index at which to start searching backwards.
+Do not use the native .lastIndexOf() method in your own implementation.
+The lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.
+*/
+
+function myLastIndexOf(array, searchElement, searchFromIndex) {
+  if(array.includes(searchElement) !== true) {
+    return -1;
+  } 
+  
+  if(searchFromIndex === undefined) {
+    for(var i = array.length-1; i >= 0; i--) {
+      if(array[i] == searchElement) {
+        return(i);
+      } 
+    } 
+  } else if(searchFromIndex !== undefined) {
+    for(var j = searchFromIndex; j >= 0; j--) {
+      if(array[j] == searchElement) {
+        return(j);
+      }
+    } 
+  }  
+}  
+
+myLastIndexOf([1,2,1], 1);    // => 2
+//myLastIndexOf([1,2,1], 1, 1);   // => 0
