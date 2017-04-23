@@ -1,0 +1,31 @@
+/*My Join
+Write a function myJoin that mirrors the behavior of JavaScript's .join() array method. However, myJoin will accept the array to operate on as its first parameter, rather than being invoked as a method on that array.
+Try and mirror the behavior of the native .join() method exactly. Note that if an element is undefined or null it should be converted to the empty string. Do not use the native .join() method in your own implementation.
+*/
+
+
+function myJoin(array, separator) {
+  var myString = "";
+  
+  for(var j = 0; j < array.length; j++) {
+    if(array[j] === null || array[j] === undefined) {
+      array[j] = "";
+    }
+  }
+  
+  for(var i = 0; i < array.length; i++) {
+    
+    
+    if(arguments[1] != undefined) {
+      myString += array[i] + arguments[1];
+    } else {
+      myString += (array[i] + ",");
+    }  
+  }
+  
+  myFinalString = myString.slice(0, -1);
+    return(myFinalString);
+}
+
+//myJoin(['hello', undefined, 'world'], ' '); // => 'hello world'
+myJoin([2, "be", false]); // => '2,be,false`
