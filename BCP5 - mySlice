@@ -1,0 +1,33 @@
+/*
+My Slice
+Write a mySlice function that mirrors the behavior of JavaScript's .slice() array method. However, mySlice will accept the array to operate on as an argument, rather than being invoked as a method on that array.
+Try and mirror the behavior of the native .slice() method exactly. If your function is passed a negative index value, that value should become an offset from the end of the sequence.
+Do not use the native .slice() method in your own implementation.
+*/
+
+function mySlice(array, begin, end) {
+  var myArray = []; 
+  
+  if(begin === undefined && end === undefined) {
+    return array;
+    
+  } else if(begin < 0 && end === undefined) {
+    for(var h = array[array.length-1 + begin]; h < array.length; h++) {
+      myArray.push(array[h]);
+    }  
+  } else if(begin !== undefined && end === undefined) {
+    for(var i = begin; i < array.length; i++) {
+      myArray.push(array[i]);
+    }
+  } else if(begin !== undefined && end !== undefined) {
+    for(var j = begin; j < end; j++) {
+      myArray.push(array[j]);
+    }
+  }  
+  return(myArray);
+}
+
+//mySlice([1,2,3]);    // => [1,2,3]
+//mySlice([1,2,3], 1);    // => [2,3]
+//mySlice([1,2,3], 1, 2);    // => [2]
+mySlice([1,2,3], -1);    // => [3]
