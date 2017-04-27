@@ -1,0 +1,25 @@
+/*
+var dolly = ["Dolly", "sheep", []];
+Write a cloneAnimal function that takes an animal and returns a "clone" of that animal. The clone should be of the same species, but should have no offspring. The clone's name should be the parent's name, with "Clone" appended to the end.
+Your cloneAnimal function should also add the clone's name to the parent's offspring array.
+
+*/
+
+function cloneAnimal(animal) { 
+  //create shallow copy of animal array
+  var animalClone = animal.slice(0);
+  //add 'Clone' to the first element of the copied array
+  animalClone[0] = animalClone[0] + "Clone";
+  //add offspring to parent's offspring array
+  animal.splice(2, 1, ([animal[0] + "Clone"]));
+  return animalClone;
+}
+
+var dolly = ["Dolly", "sheep", []]; 
+var dollyClone = cloneAnimal(dolly);
+
+// The clone is of same species, with new name and no offspring
+console.log(dollyClone);    // ["DollyClone", "sheep", []]
+
+// The parent animal now has an offspring in its array
+console.log(dolly);    // ["Dolly", "sheep", ["DollyClone"]]
