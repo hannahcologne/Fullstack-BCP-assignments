@@ -1,0 +1,18 @@
+/*
+In many cases, this is not the behaviour we want. We want a copy of an array where all of it's nested elements are also copies. This is referred to as a 'deep copy'.
+Write a function to make a 'deeper' copy of an array. A function that created a full deep copy would have to handle any level of nested arrays. For now, focus on writing a function that clones an array and can handle one level of nested arrays.
+*/
+
+function copy(arr) {
+  var deepCopy = JSON.parse(JSON.stringify(arr)); //JSON.stringify converts the array to JSON value, JSON.parse constructs the JavaScript value/object described by the string. With var deepCopy = arr.slice(0) you would just get a shallow copy;
+  return deepCopy;
+}
+
+var arr = [1,[2,3]];
+var arrCopy = copy(arr);
+
+arr[1].push(4);
+console.log(arrCopy);  // [1,[2,3]] Copy is not affected!
+
+
+
