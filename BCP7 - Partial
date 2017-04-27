@@ -1,0 +1,14 @@
+/*Because there are many situations where we may want to use partial application, let's write a function that generates partial functions.
+Our partial function will accept functions that expect two arguments and return functions that expect one. The other argument will be defaulted to the value passed in as the second argument to our partial function.
+
+*/
+
+function partial(func, argOne) { //arg = 5 
+  return function(argTwo) {
+     return func(argOne, argTwo); 
+  };
+}
+
+var summer = function(a, b) { return a + b }; //runs with arguments 5 and 10
+sumFive = partial(summer, 5);
+sumFive(10);    // => 15;
