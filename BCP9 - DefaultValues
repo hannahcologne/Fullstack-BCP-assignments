@@ -1,0 +1,26 @@
+/*Default Values
+As a breeder, deciding upon the dogs' names is tough! So unless someone names my dog, I always name it Steve.
+Write a function called dogBreeder that takes a name and an age and returns a dog object with those properties attached to it. 
+If someone fails to put a name in, default to Steve. If someone fails to put an age in, default to 0.
+Be careful though, sometimes the people using our function might not have nice input! (you guys asked for it!).
+*/
+
+
+function dogBreeder(name, age) {
+
+  if(arguments.length === 1) {
+    age = name;   
+    name = "Steve";
+  }
+  
+  var Obj = {
+  
+    dogName: name,
+    dogAge: age
+  }; 
+ 
+  return Obj;
+}
+
+//dogBreeder("Sam", 12)    // => {name: 'Sam', age: 12}
+dogBreeder(15);    // => {name:'Steve', age: 15}
