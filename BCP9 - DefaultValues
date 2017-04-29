@@ -8,19 +8,23 @@ Be careful though, sometimes the people using our function might not have nice i
 
 function dogBreeder(name, age) {
 
-  if(arguments.length === 1) {
-    age = name;   
+  if(arguments.length === 1 && typeof arguments[0] === "number") {
+    age = name;   // if only one argument is passed, the object assigns it automatically to the first parameter
     name = "Steve";
-  }
+  } else if(arguments.length === 1 && typeof arguments[0] === "string") {
+    name = name;  
+    age = 0;
+  }  
   
   var Obj = {
   
-    dogName: name,
-    dogAge: age
+    name: name,
+    age: age,
   }; 
  
   return Obj;
 }
 
 //dogBreeder("Sam", 12)    // => {name: 'Sam', age: 12}
-dogBreeder(15);    // => {name:'Steve', age: 15}
+dogBreeder(15);
+//dogBreeder("Sam");    // => {name:'Steve', age: 15}
