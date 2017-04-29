@@ -1,0 +1,24 @@
+/*
+Frequency Analysis
+Write a function that takes a string of text (containing ONLY lowercase letters) and returns an object containing the count for each letter in the string.
+*/
+
+function frequencyAnalysis(str) {
+  
+  var obj = {}; //create a new object
+
+  for(var i = 0; i < str.length; i++) {
+    // the loop is creating object properties and giving them values
+    var character = str.charAt(i);
+    // obj[character] adds a key (character) to the obj. Check with ternary if that key already exists. If the value is not a number (undefined or "", etc) then its value will be changed to 1 otherwise, the value is a number and it adds to it
+    obj[character] = (isNaN(obj[character]) ? 1 : obj[character] + 1);
+}
+  return(obj);
+
+}
+
+frequencyAnalysis('abcaaaabbbbbssbhbjbhbhs');
+// => {a: 2, b: 1, c: 1}
+
+
+
