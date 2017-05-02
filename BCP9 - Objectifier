@@ -1,0 +1,60 @@
+/*Objectifying Arrays
+
+Write a function that accepts a nested array and returns a well-structured object. The array passed into the function will look like the one below and have only four levels of nested-ness.
+
+*/
+
+var data = [
+  [ 'animals',
+    [
+      'dogs', ['Corgi', 'Sheltie'],
+      'cats', ['Tabby','Black'],
+      'pigs', ['Teacup']
+    ]
+  ],
+  [ 'guitars',
+    [
+      'Fender', ['Telecaster', 'Stratocaster','Jazzmaster'],
+      'Gibson', ["Gibson Flying-V", 'Firebird', 'Les Paul']
+    ]
+  ]
+]
+
+
+function objectifier(data) {
+  var obj = {};
+  
+  for(var i = 0; i < data.length; i++) {
+    obj[data[i][0]] = {};
+    var subspecies = data[i][1];
+    
+    for(var z = 0; z < subspecies.length; z++) {
+      if(z%2 === 0) {
+        obj[data[i][0]][subspecies[z]] = subspecies[z + 1];
+      }
+    }
+  }
+  
+  return obj;
+}
+ 
+
+objectifier(myArray);
+
+
+/*
+
+How it should look: 
+
+var data = {
+       animals : {
+           dogs : ['Corgi', 'Sheltie'],
+           cats : ['Tabby','Black'],
+           pigs : ['Teacup']
+       },
+       guitars : {
+           Fender : ['Telecaster', 'Stratocaster','Jazzmaster'],
+           Gibson : ["Gibson Flying-V", 'Firebird', 'Les Paul']
+       }
+  }
+*/
