@@ -1,0 +1,26 @@
+/*Nested Logs
+Write a function that will traverse through an array that can be any number of dimensions! The function takes the nested array as a parameter, and logs each element to the console. How do you traverse the array when you don't know how nested it is??
+Recursion!
+*/
+
+function nestedLogs(arr) {
+  var newArr = [];
+  
+  if(arr.length === 0) {
+    return 0;
+    
+  } else {
+    for(var i = 0; i < arr.length; i++) { 
+      if(typeof arr[i] === "number") {
+        console.log(arr[i]);
+      }
+      nestedLogs(arr[i]);
+    }  
+  }
+}
+
+nestedLogs([3,4,5,[5,6,[8]],[0,2]]);  //3 4 5 5 6 8 0 2
+
+
+
+
