@@ -1,0 +1,23 @@
+/*
+Sum Digits
+Write a function that sums all the digits of a given integer (assume positive). Use recursion.
+*/
+
+var sum = 0
+
+function sumDigits(int) {
+
+
+  var digits = int.toString();
+
+  if(int <= 0) {
+    return 0;
+    
+  } else {
+    sum += (Number(digits.charAt(0)));
+    sumDigits(Number(digits.slice(1)));
+  }
+  return sum;
+}
+
+sumDigits(1234);    // => 10
