@@ -1,0 +1,26 @@
+/*Greatest Common Divisor
+In mathematics, the greatest common divisor (gcd) for a set of numbers is the largest positive integer that divides the numbers without a remainder. For example, the gcd of 8 and 12 is 4.
+Write a function that accepts two positive integers and recursively computes (and returns) the greatest common divisor.
+
+To compute gcd(48,18), divide 48 by 18 to get a quotient of 2 and a remainder of 12. Then divide 18 by 12 to get a quotient of 1 and a remainder of 6. Then divide 12 by 6 to get a remainder of 0, which means that 6 is the gcd. Note that we ignored the quotient in each step except to notice when the remainder reached 0, signalling that we had arrived at the answer. 
+*/
+var result = 0;
+
+function gcd(int1, int2) {
+  
+  if(int1 === 0) {
+    return int2;
+    
+  } else if(int2 === 0) {
+    return int1;
+    
+  } else if(int1%int2 > 0) { 
+    gcd(int2, int1%int2);
+    
+  } else if(int1%int2 === 0) {
+    result += int2;
+  }
+  return result;
+}
+
+gcd(48, 18)    // => 6
